@@ -1,8 +1,19 @@
 # Description: Boxstarter Script
-# Author: Microsoft
-# Common dev settings for desktop app development
+# Author: Ivan Espinosa
+# My dev settings for full stack development
 
-Disable-UAC
+$Boxstarter.RebootOk=$true # Allow reboots?
+$Boxstarter.NoPassword=$false # Is this a machine with no login password?
+$Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a reboot
+
+# Common config
+Enable-RemoteDesktop
+Disable-InternetExplorerESC # IE ESC
+Disable-UAC # Disable User Access control
+Disable-BingSearch # From the taskbar search field
+
+
+########################################################################
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
