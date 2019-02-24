@@ -12,9 +12,6 @@ Disable-InternetExplorerESC # IE ESC
 Disable-UAC # Disable User Access control
 Disable-BingSearch # From the taskbar search field
 
-
-########################################################################
-
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
 $helperUri = $Boxstarter['ScriptToCall']
