@@ -18,6 +18,10 @@ choco install lockhunter
 choco install redis-desktop-manager
 choco install docker-cli
 
+
+choco install -y visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
+Update-SessionEnvironment #refreshing env due to Git install
+
 # needed to run dot net core apps in IIS
 choco install dotnetcore-windowshosting
 
