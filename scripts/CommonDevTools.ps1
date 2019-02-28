@@ -24,6 +24,7 @@ choco install -y git-credential-winstore
 choco install -y scriptcs
 choco install -y jre8
 choco install -y jdk8
+choco install -y pycharm-community
 choco install -y nodejs.install
 choco install -y python
 choco install -y urlrewrite
