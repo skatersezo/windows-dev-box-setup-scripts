@@ -8,6 +8,9 @@ Write-Host "WARNING! This script is designed to be used on a completely fresh en
 Write-Host ""
 Pause
 
+Enable-MicrosoftUpdate
+Install-WindowsUpdate -acceptEula
+
 $Boxstarter.RebootOk=$true # Allow reboots?
 $Boxstarter.NoPassword=$false # Is this a machine with no login password?
 $Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a reboot
@@ -36,7 +39,6 @@ $no = New-Object System.Management.Automation.Host.ChoiceDescription "&No",""
 $choices = [System.Management.Automation.Host.ChoiceDescription[]]($yes,$no)
 $vsEnterprise = $Host.UI.PromptForChoice("Important!","Does your MSDN license allocation entitle you to VS Enterprise? Check w/HelpDesk if in doubt.",$choices,1)
 
-
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 function executeScript {
@@ -48,8 +50,9 @@ function executeScript {
 executeScript "SystemConfiguration.ps1";
 executeScript "FileExplorerSettings.ps1";
 executeScript "RemoveDefaultApps.ps1";
+executeScript "HyperV.ps1";
 executeScript "CommonDevTools.ps1";
-
+executeScript "Docker.ps1";
 
 #--- UWP Workload and installing Windows Template Studio ---
 choco install -y visualstudio2017-workload-azure
@@ -57,6 +60,3 @@ choco install -y visualstudio2017-workload-manageddesktop
 
 #--- reenabling critial items ---
 Enable-UAC
-# End
-choco feature disable -n allowGlobalConfirmation
-
