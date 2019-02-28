@@ -24,12 +24,12 @@ choco install -y git-credential-winstore
 choco install -y scriptcs
 choco install -y jre8
 choco install -y jdk8
-choco install -y pycharm-community
 choco install -y nodejs.install
 choco install -y python
 choco install -y urlrewrite
 choco install -y iis-arr
 choco install -y sql-server-management-studio
+choco install -y pycharm-community
 
 # Git config
 cmd /c "git config --global user.name '$windowsUser' & git config --global user.email '$userEmail'"
