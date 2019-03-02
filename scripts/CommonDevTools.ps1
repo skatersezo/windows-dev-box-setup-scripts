@@ -25,6 +25,7 @@ choco install -y scriptcs
 choco install -y jre8
 choco install -y jdk8
 choco install -y nodejs.install
+choco install -y wsl-ubuntu-1804
 choco install -y python
 choco install -y urlrewrite
 choco install -y iis-arr
@@ -60,9 +61,9 @@ choco install -y dropbox
 choco install -y webpi
 choco install -y GoogleChrome
 choco install -y firefox
-choco install -y wsl-ubuntu-1804
 choco install -y lastpass
 choco install -y markdownpad2
+choco install -y dropbox
 
 #--- Tools ---
 code --install-extension msjsdiag.debugger-for-chrome
